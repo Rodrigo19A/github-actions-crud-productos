@@ -1,0 +1,44 @@
+
+name: CI CRUD Productos
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  calidad-y-pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Analizar codigo con ESLint
+        run: npm run lint
+
+      - name: Ejecutar pruebas unitarias
+        run: npm test
+
+      - name: Generar reporte de cobertura
+        run: npm run coverage
+
+      - name: Guardar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: coverage/
+          if-no-files-found: error

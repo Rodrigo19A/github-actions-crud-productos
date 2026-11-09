@@ -1,0 +1,32 @@
+{
+  "name": "github-actions-crud-productos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js",
+    "lint": "eslint .",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrigo19A/github-actions-crud-productos.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Rodrigo19A/github-actions-crud-productos/issues"
+  },
+  "homepage": "https://github.com/Rodrigo19A/github-actions-crud-productos#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.5",
+    "jest": "^30.5.2",
+    "supertest": "^7.3.2"
+  }
+}
