@@ -108,3 +108,4 @@ function createApp() {
 }
 
 module.exports = createApp;
+const unusedVariable = 'fallo intencional';
