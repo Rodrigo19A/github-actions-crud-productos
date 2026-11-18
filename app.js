@@ -8,6 +8,15 @@ function createApp() {
 
   app.use(express.json());
 
+  // Endpoint para verificar el estado de la API
+  app.get('/health', (req, res) => {
+    res.status(200).json({
+      status: 'ok',
+      version: '1.0.0'
+    });
+  });
+
+
   function datosValidos(nombre, precio) {
     return (
       typeof nombre === 'string' &&
